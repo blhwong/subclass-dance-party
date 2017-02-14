@@ -28,9 +28,9 @@ body, a:link, a:visited, a:active{
 
 img{
   position:absolute;
-  //animation-name:left_right;
+  animation-name:left_right;
   animation-duration: 2s;
-  animation-iteration-count: 2;
+  animation-iteration-count: infinite;
 }
 
 @keyframes left_right{
@@ -43,7 +43,7 @@ img{
 
 }
 
-#atsley{
+#astley{
   clip: rect(10px, 250px, 300px, 40px);
 }
 
