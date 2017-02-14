@@ -31,9 +31,9 @@ img{
 }
 
 #atsley{
-  clip: rect();
+  clip: rect(10px, 250px, 300px, 40px);
 }
 
 #travolta{
-  clip: rect();
+  clip: rect(25px, 290px, 300px, 130px);
 }
