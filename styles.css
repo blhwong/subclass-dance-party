@@ -28,6 +28,19 @@ body, a:link, a:visited, a:active{
 
 img{
   position:absolute;
+  //animation-name:left_right;
+  animation-duration: 2s;
+  animation-iteration-count: 2;
+}
+
+@keyframes left_right{
+  0% {left: 0;}
+  50% {left: 200px;}
+  100% {left: 0;}
+}
+
+@keyframes none{
+
 }
 
 #atsley{

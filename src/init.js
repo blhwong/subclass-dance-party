@@ -33,5 +33,19 @@ $(document).ready(function() {
     console.log($(".container").height(), $(".container").width());
     $('.container').append(dancer.$node);
   });
+
+  $('.strafeButton').on('click', function(event) {
+    console.log('clicked!');
+    var styleSettings = {
+      'animation-name': 'left_right'
+    };
+    $('img').css(styleSettings);
+    var off = {
+      'animation-name': 'none'
+    };
+    setTimeout(function() {
+      $('img').css(off)
+    }, 2000);
+  });
 });
 
