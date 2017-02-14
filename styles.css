@@ -27,5 +27,5 @@ body, a:link, a:visited, a:active{
 }
 
 img{
-  animation: infinite;
+  position:absolute;
 }
