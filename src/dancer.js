@@ -8,6 +8,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeDancer.prototype.step = function() {
+  debugger;
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
 
