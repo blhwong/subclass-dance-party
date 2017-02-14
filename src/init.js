@@ -30,8 +30,5 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
   });
-  $('.addAstleyButton').on('click', function() {
-
-  });
 });
 

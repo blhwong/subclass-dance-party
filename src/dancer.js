@@ -1,7 +1,7 @@
 var makeDancer = function(top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
   // use jQuery to create an HTML <span> tag
-  this.$node = $('<span class="dancer"></span>');
+  this.$node = this.$node || $('<span class="dancer"></span>');
 
   makeDancer.prototype.step.call(this);
   makeDancer.prototype.setPosition.call(this.$node, top, left);
