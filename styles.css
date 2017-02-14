@@ -29,3 +29,11 @@ body, a:link, a:visited, a:active{
 img{
   position:absolute;
 }
+
+#atsley{
+  clip: rect();
+}
+
+#travolta{
+  clip: rect();
+}

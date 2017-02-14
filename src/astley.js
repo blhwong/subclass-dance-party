@@ -1,5 +1,5 @@
 var makeAstley = function(top, left, timeBetweenSteps) {
-  this.$node = $("<img src=\"astley.gif\">");
+  this.$node = $("<img id=\"atsley\" src=\"astley.gif\">");
   makeDancer.call(this, top, left, timeBetweenSteps);
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
