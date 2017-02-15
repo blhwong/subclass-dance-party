@@ -2,9 +2,11 @@ body, html{
   height:100%;
 }
 body{
-  margin: 0px;
+  margin: 0;
   background-color:#444;
   font-size: 18px;
+  background-image: url("./disco_background.jpg");
+  background-size: cover;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -26,6 +28,39 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
+.travolta{
+  width: 490px;
+  height: 350px;
+  position:absolute;
+  animation-name: example;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  /*animation-direction: alternate;*/
+}
 img{
-  animation: infinite;
+  position:absolute;
+  animation-name: example;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  /*animation-direction: alternate;*/
+
+}
+@keyframes example {
+  0% {left:0;}
+  50% {left:800px;}
+  100% {left:0;}
+}
+
+#astley{
+  clip: rect(10px, 250px, 300px, 40px);
+
+}
+
+.travolta{
+  clip: rect(25px, 290px, 300px, 130px);
+}
+
+.container {
+  height: 1000px;
+  padding: 200px;
 }
