@@ -35,5 +35,8 @@ $(document).ready(function() {
   $('.strafe').on('click', function(event) {
     makeDancer.prototype.strafe();
   });
+  $('.spinbutton').on('click', function(event) {
+    makeDancer.prototype.spin();
+  });
 });
 

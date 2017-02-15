@@ -35,8 +35,13 @@ body, a:link, a:visited, a:active{
   animation-name: example;
   animation-duration: 2s;
   animation-iteration-count: infinite;
+  
   /*animation-direction: alternate;*/
 }
+
+  /*-webkit-animation-name: 'spin';*/
+  /*-webkit-animation: spin .5s infinite linear;*/
+
 img{
   position:absolute;
   animation-name: example;
@@ -50,7 +55,13 @@ img{
   50% {left:800px;}
   100% {left:0;}
 }
-
+@-webkit-keyframes spin {
+    0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}   
+}
+#spin{
+  
+}
 #astley{
   clip: rect(10px, 250px, 300px, 40px);
 

@@ -19,6 +19,7 @@ makeDancer.prototype.setPosition = function(top, left) {
   };
   this.css(styleSettings);
 };
+makeDancer.prototype.spinOn = false;
 makeDancer.prototype.strafeOn = false;
 makeDancer.prototype.strafe = function() {
 
@@ -42,6 +43,31 @@ makeDancer.prototype.strafe = function() {
     $('.travolta').css(styleSettings3);
     $('img').css(styleSettings3);
     makeDancer.prototype.strafeOn  = !(makeDancer.prototype.strafeOn );
+  }
+
+};
+makeDancer.prototype.spin = function() {
+
+  var styleSettings4 = {
+    // 'position': 'absolute',
+    // 'animation-name': 'example',
+    // 'animation-d uration': '2s',
+    '-webkit-animation': ''
+  };
+  var styleSettings3 = {
+    // 'position': '',
+    // 'animation-name': '',
+    // 'animation-duration': '',
+    '-webkit-animation': 'spin .5s infinite linear'
+  };
+  if (!(makeDancer.prototype.spinOn )) {
+    $('#spin').css(styleSettings3);
+    // $('img').css(styleSettings2);
+    makeDancer.prototype.spinOn  = !(makeDancer.prototype.spinOn );
+  } else if (makeDancer.prototype.spinOn ) {
+    $('#spin').css(styleSettings4);
+    // $('img').css(styleSettings3);
+    makeDancer.prototype.spinOn  = !(makeDancer.prototype.spinOn );
   }
 
 };
