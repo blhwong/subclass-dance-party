@@ -5,6 +5,8 @@ body{
   margin: 0;
   background-color:#444;
   font-size: 18px;
+  background-image: url("./disco_background.jpg");
+  background-size: cover;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -26,32 +28,52 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
+.travolta{
+  width: 490px;
+  height: 350px;
+  position:absolute;
+  animation-name: example;
+  animation-duration: 2s;
+  animation-iteration-count: 0;
+  
+  /*animation-direction: alternate;*/
+}
+
+  /*-webkit-animation-name: 'spin';*/
+  /*-webkit-animation: spin .5s infinite linear;*/
+
 img{
   position:absolute;
-  animation-name:left_right;
+  animation-name: example;
   animation-duration: 2s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes left_right{
-  0% {left: 0;}
-  50% {left: 200px;}
-  100% {left: 0;}
-}
-
-@keyframes none{
+  animation-iteration-count: 0;
+  /*animation-direction: alternate;*/
 
 }
-
+@keyframes example {
+  0% {left:0;}
+  50% {left:800px;}
+  100% {left:0;}
+}
+@-webkit-keyframes spin {
+    0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}   
+}
+#spin{
+  
+}
 #astley{
   clip: rect(10px, 250px, 300px, 40px);
+
 }
 
-#travolta{
+.travolta{
   clip: rect(25px, 290px, 300px, 130px);
 }
 
 .container {
   height: 1000px;
   padding: 200px;
+}
+button, #roam {
 }

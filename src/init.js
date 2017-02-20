@@ -15,7 +15,7 @@ $(document).ready(function() {
      * A new object of the given type will be created and added
      * to the stage.
      */
-
+     // debugger;
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
     // get the maker function for the kind of dancer we're supposed to make
@@ -28,24 +28,18 @@ $(document).ready(function() {
       // $(".container").height() * Math.random(),
       ($("body").height())/2 * Math.random() + 100,
       $(".container").width() * Math.random(),
-      Math.random() * 1000
+      20
     );
-    console.log($(".container").height(), $(".container").width());
     $('.container').append(dancer.$node);
   });
-
-  $('.strafeButton').on('click', function(event) {
-    console.log('clicked!');
-    var styleSettings = {
-      'animation-name': 'left_right'
-    };
-    $('img').css(styleSettings);
-    var off = {
-      'animation-name': 'none'
-    };
-    setTimeout(function() {
-      $('img').css(off)
-    }, 2000);
+  $('.strafe').on('click', function(event) {
+    makeDancer.prototype.strafe();
+  });
+  $('.spinbutton').on('click', function(event) {
+    makeDancer.prototype.spin();
+  });
+  $('#roam').click( function(event) {
+     makeDancer.prototype.step();
   });
 });
 
