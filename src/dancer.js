@@ -11,18 +11,17 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 
 };
 
-makeDancer.prototype.step = function() {
-  var top = ($("body").height())/2 * Math.random() + 100;
-  var left =  $(".container").width() * Math.random();
-  // var stepStyleOn = {
-  //   top: '+=10px',
-  //   left: '+=10px'
-  // }
+makeDancer.prototype.step = function(dancer) {
+  console.log(dancer);
+  this.y = ($('body').height()) / 2 * Math.random() + 100;
+  this.x = $('.container').width() * Math.random();
   var stepStyleOff = {
-    top: top,
-    left: left
-  }
-  $('.travolta').animate(stepStyleOff, 1000,makeDancer.prototype.step);
+    top: this.y,
+    left: this.x
+  };
+  dancer.$node.animate(stepStyleOff, 1500, function() {
+    makeDancer.prototype.step(dancer);
+  });
   // console.log('stepping to y= ' + y + ' x= ' + x + ' inteval = ' + interval);
   // makeDancer.prototype.setPosition.call(this.$node, y, x);
   // setTimeout(makeDancer.prototype.step.bind(this, y, x, interval), interval);
@@ -54,11 +53,11 @@ makeDancer.prototype.strafe = function() {
   if (!(makeDancer.prototype.strafeOn )) {
     $('.travolta').css(styleSettings2);
     $('img').css(styleSettings2);
-    makeDancer.prototype.strafeOn  = !(makeDancer.prototype.strafeOn );
+    makeDancer.prototype.strafeOn = !(makeDancer.prototype.strafeOn );
   } else if (makeDancer.prototype.strafeOn ) {
     $('.travolta').css(styleSettings3);
     $('img').css(styleSettings3);
-    makeDancer.prototype.strafeOn  = !(makeDancer.prototype.strafeOn );
+    makeDancer.prototype.strafeOn = !(makeDancer.prototype.strafeOn );
   }
 
 };
@@ -79,11 +78,11 @@ makeDancer.prototype.spin = function() {
   if (!(makeDancer.prototype.spinOn )) {
     $('#spin').css(styleSettings3);
     // $('img').css(styleSettings2);
-    makeDancer.prototype.spinOn  = !(makeDancer.prototype.spinOn );
+    makeDancer.prototype.spinOn = !(makeDancer.prototype.spinOn );
   } else if (makeDancer.prototype.spinOn ) {
     $('#spin').css(styleSettings4);
     // $('img').css(styleSettings3);
-    makeDancer.prototype.spinOn  = !(makeDancer.prototype.spinOn );
+    makeDancer.prototype.spinOn = !(makeDancer.prototype.spinOn );
   }
 
 };
