@@ -7,7 +7,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   // console.log(this.y);
   // console.log(this.x);
   makeDancer.prototype.setPosition.call(this.$node, this.y, this.x);
- 
+
 
 };
 
@@ -116,11 +116,11 @@ makeDancer.prototype.spin = function() {
   };
   if (!(makeDancer.prototype.spinOn )) {
     $('#spin').css(styleSettings3);
-    // $('img').css(styleSettings2);
+    $('img').css(styleSettings3);
     makeDancer.prototype.spinOn = !(makeDancer.prototype.spinOn );
   } else if (makeDancer.prototype.spinOn ) {
     $('#spin').css(styleSettings4);
-    // $('img').css(styleSettings3);
+    $('img').css(styleSettings4);
     makeDancer.prototype.spinOn = !(makeDancer.prototype.spinOn );
   }
 
