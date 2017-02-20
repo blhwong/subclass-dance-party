@@ -35,7 +35,7 @@ body, a:link, a:visited, a:active{
   animation-name: example;
   animation-duration: 2s;
   animation-iteration-count: 0;
-  
+
   /*animation-direction: alternate;*/
 }
 
@@ -57,10 +57,10 @@ img{
 }
 @-webkit-keyframes spin {
     0%  {-webkit-transform: rotate(0deg);}
-    100% {-webkit-transform: rotate(360deg);}   
+    100% {-webkit-transform: rotate(360deg);}
 }
 #spin{
-  
+
 }
 #astley{
   clip: rect(10px, 250px, 300px, 40px);

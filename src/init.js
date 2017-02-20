@@ -31,6 +31,7 @@ $(document).ready(function() {
       20
     );
     window.dancers.push(dancer);
+    console.log(window.dancers);
     $('.container').append(dancer.$node);
   });
   $('.strafe').on('click', function(event) {
@@ -44,5 +45,17 @@ $(document).ready(function() {
       makeDancer.prototype.step(window.dancers[i]);
     }
   });
+  $('.lineup').on('click', function() {
+    var left = -150;
+    for (var i = 0; i < window.dancers.length; i++) {
+      var top = 475;
+      if (!window.dancers[i]["$node"][0].className) {
+        top+=50;
+        console.log('found');
+      }
+      makeDancer.prototype.setPosition.call(window.dancers[i]["$node"], top, left);
+      left+=200;
+    }
+  })
 });
 
