@@ -24,7 +24,7 @@ makeDancer.prototype.step = function(dancer) {
   var neary = (dancer.y > newy - 140 && dancer.y < newy + 140);
   var nearx = (dancer.x > newx - 140 && dancer.x < newx + 140);
   // console.log(neary, nearx);
-  
+
   var collisions = false;
   for (var i = 0; i < window.dancers.length; i++) {
     if (!(collisions)) {

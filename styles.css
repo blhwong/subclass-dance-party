@@ -50,6 +50,12 @@ img{
   /*animation-direction: alternate;*/
 
 }
+
+@keyframes jump {
+  0% {top:0;}
+  50% {top:50px;}
+  100% {top:0;}
+}
 @keyframes example {
   0% {left:0;}
   50% {left:800px;}

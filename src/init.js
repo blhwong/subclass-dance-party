@@ -32,22 +32,10 @@ $(document).ready(function() {
     );
     dancer.spin = false;
     dancer.$node.on('mouseover', function(event) {
-      console.log('hovering');
-      // var styleSettings2 = {
-      //   'animation-iteration-count': 'infinite',
-      // };
-      // var styleSettings3 = {
-      //   'animation-iteration-count': '1'
-      // };
-      // if (!(makeDancer.prototype.strafeOn )) {
-      //   $('.travolta').css(styleSettings2);
-      //   $('img').css(styleSettings2);
-      //   makeDancer.prototype.strafeOn = !(makeDancer.prototype.strafeOn );
-      // } else if (makeDancer.prototype.strafeOn ) {
-      //   $('.travolta').css(styleSettings3);
-      //   $('img').css(styleSettings3);
-      //   makeDancer.prototype.strafeOn = !(makeDancer.prototype.strafeOn );
-      // }
+      makeDancer.prototype.spin();
+    });
+    dancer.$node.on('mouseleave', function(event) {
+      makeDancer.prototype.spin();
     });
     dancer.stepping = false;
     dancer.toggleOff = false;
