@@ -30,6 +30,8 @@ $(document).ready(function() {
       $('.container').width() * Math.random(),
       20
     );
+    dancer.stepping = false;
+    dancer.toggleOff = false;
     window.dancers.push(dancer);
     $('.container').append(dancer.$node);
   });
@@ -41,7 +43,14 @@ $(document).ready(function() {
   });
   $('#roam').click( function(event) {
     for (var i=0; i < window.dancers.length; i++) {
-      makeDancer.prototype.step(window.dancers[i]);
+      if (window.dancers[i].stepping === false) {
+        window.dancers[i].stepping = true;
+        window.dancers[i].toggleOff = false;
+        makeDancer.prototype.step(window.dancers[i]);
+      } else if (window.dancers[i].stepping === true) {
+        window.dancers[i].toggleOff = true;
+        window.dancers[i].stepping = false;
+      }
     }
   });
 });
