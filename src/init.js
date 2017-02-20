@@ -30,8 +30,23 @@ $(document).ready(function() {
       $('.container').width() * Math.random(),
       20
     );
-    dancer.$node.on('mouseover', function() {
+    dancer.$node.on('mouseover', function(event) {
       console.log('hovering');
+      // var styleSettings2 = {
+      //   'animation-iteration-count': 'infinite',
+      // };
+      // var styleSettings3 = {
+      //   'animation-iteration-count': '1'
+      // };
+      // if (!(makeDancer.prototype.strafeOn )) {
+      //   $('.travolta').css(styleSettings2);
+      //   $('img').css(styleSettings2);
+      //   makeDancer.prototype.strafeOn = !(makeDancer.prototype.strafeOn );
+      // } else if (makeDancer.prototype.strafeOn ) {
+      //   $('.travolta').css(styleSettings3);
+      //   $('img').css(styleSettings3);
+      //   makeDancer.prototype.strafeOn = !(makeDancer.prototype.strafeOn );
+      // }
     });
     dancer.stepping = false;
     dancer.toggleOff = false;
@@ -58,16 +73,33 @@ $(document).ready(function() {
     }
   });
   $('.lineup').on('click', function() {
-    var left = -150;
-    for (var i = 0; i < window.dancers.length; i++) {
-      var top = 475;
-      if (!window.dancers[i]["$node"][0].className) {
-        top+=50;
-        // console.log('found');
+
+
+
+    for(var i = 0; i < window.dancers.length; i++) {
+      if (window.dancers[i].stepping === true) {
+        window.dancers[i].toggleOff = true;
+        window.dancers[i].stepping = false;
       }
-      makeDancer.prototype.setPosition.call(window.dancers[i]["$node"], top, left);
-      left+=200;
     }
+    window.setTimeout(function() {
+      var left = -150;
+      for (var i = 0; i < window.dancers.length; i++) {
+        var top = 475
+        if (!window.dancers[i]["$node"][0].className) {
+          top+=50;
+          // console.log('found');
+        }
+        if (window.dancers[i].stepping === true) {
+          window.dancers[i].toggleOff = true;
+          window.dancers[i].stepping = false;
+        }
+        makeDancer.prototype.setPosition.call(window.dancers[i]["$node"], top, left);
+        left+=200;
+      }
+    }, 2000);
+
+
   })
 });
 
