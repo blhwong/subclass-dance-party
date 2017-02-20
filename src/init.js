@@ -30,6 +30,7 @@ $(document).ready(function() {
       $('.container').width() * Math.random(),
       20
     );
+    dancer.spin = false;
     dancer.stepping = false;
     dancer.toggleOff = false;
     window.dancers.push(dancer);
