@@ -26,10 +26,11 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
 
       // $(".container").height() * Math.random(),
-      ($("body").height())/2 * Math.random() + 100,
-      $(".container").width() * Math.random(),
+      ($('body').height()) / 2 * Math.random() + 100,
+      $('.container').width() * Math.random(),
       20
     );
+    window.dancers.push(dancer);
     $('.container').append(dancer.$node);
   });
   $('.strafe').on('click', function(event) {
@@ -39,7 +40,9 @@ $(document).ready(function() {
     makeDancer.prototype.spin();
   });
   $('#roam').click( function(event) {
-     makeDancer.prototype.step();
+    for (var i=0; i < window.dancers.length; i++) {
+      makeDancer.prototype.step(window.dancers[i]);
+    }
   });
 });
 

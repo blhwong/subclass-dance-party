@@ -11,18 +11,51 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 
 };
 
-makeDancer.prototype.step = function() {
-  var top = ($("body").height())/2 * Math.random() + 100;
-  var left =  $(".container").width() * Math.random();
-  // var stepStyleOn = {
-  //   top: '+=10px',
-  //   left: '+=10px'
-  // }
+makeDancer.prototype.step = function(dancer) {
   var stepStyleOff = {
-    top: top,
-    left: left
-  }
-  $('.travolta').animate(stepStyleOff, 1000,makeDancer.prototype.step);
+    top: this.y,
+    left: this.x
+  };
+  var newx = ($('body').height()) / 2 * Math.random() + 100;
+  var newy = $('.container').width() * Math.random();
+  // var neary = (this.y > newy - 300 && this.y < newy + 300);
+  // var nearx = (this.x > nearx -300 && this.x < nearx + 300);
+
+  // if (neary && nearx) {
+  //   var stepStyleOff = {
+  //     top: newy,
+  //     left: newx
+  //   };
+  // }
+
+  var stepStyleOff = {
+      top: newy,
+      left: newx
+  };
+  console.log(newy, newx);
+  // var collisions = false
+  // for (var i = 0; i < window.dancers.length; i++) {
+  //   if (!(collisions)) {
+  //     var othery = window.dancers[i].y;
+  //     var otherx = window.dancers[i].x;
+  //     var collisiony = (this.y > othery - 100 && this.y < othery + 100);
+  //     var collisionx = (this.x > otherx -100 && this.x < otherx + 100);
+  //     if (collisionx && collisiony) {
+  //       collisions = true;
+  //     }
+  //   }
+  // }
+
+  // if (collisions) {
+  //   dancer.$node.animate(stepStyleOff, 5000, function() {
+  //     console.log('will spin');
+  //     makeDancer.prototype.step(dancer);
+  //   });
+  // }
+
+  dancer.$node.animate(stepStyleOff, 5000, function() {
+    makeDancer.prototype.step(dancer);
+  });
   // console.log('stepping to y= ' + y + ' x= ' + x + ' inteval = ' + interval);
   // makeDancer.prototype.setPosition.call(this.$node, y, x);
   // setTimeout(makeDancer.prototype.step.bind(this, y, x, interval), interval);
@@ -54,11 +87,11 @@ makeDancer.prototype.strafe = function() {
   if (!(makeDancer.prototype.strafeOn )) {
     $('.travolta').css(styleSettings2);
     $('img').css(styleSettings2);
-    makeDancer.prototype.strafeOn  = !(makeDancer.prototype.strafeOn );
+    makeDancer.prototype.strafeOn = !(makeDancer.prototype.strafeOn );
   } else if (makeDancer.prototype.strafeOn ) {
     $('.travolta').css(styleSettings3);
     $('img').css(styleSettings3);
-    makeDancer.prototype.strafeOn  = !(makeDancer.prototype.strafeOn );
+    makeDancer.prototype.strafeOn = !(makeDancer.prototype.strafeOn );
   }
 
 };
@@ -79,11 +112,11 @@ makeDancer.prototype.spin = function() {
   if (!(makeDancer.prototype.spinOn )) {
     $('#spin').css(styleSettings3);
     // $('img').css(styleSettings2);
-    makeDancer.prototype.spinOn  = !(makeDancer.prototype.spinOn );
+    makeDancer.prototype.spinOn = !(makeDancer.prototype.spinOn );
   } else if (makeDancer.prototype.spinOn ) {
     $('#spin').css(styleSettings4);
     // $('img').css(styleSettings3);
-    makeDancer.prototype.spinOn  = !(makeDancer.prototype.spinOn );
+    makeDancer.prototype.spinOn = !(makeDancer.prototype.spinOn );
   }
 
 };
