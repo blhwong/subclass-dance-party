@@ -30,6 +30,9 @@ $(document).ready(function() {
       $('.container').width() * Math.random(),
       20
     );
+    dancer.$node.on('mouseover', function() {
+      console.log('hovering');
+    })
     window.dancers.push(dancer);
     console.log(window.dancers);
     $('.container').append(dancer.$node);
@@ -51,7 +54,7 @@ $(document).ready(function() {
       var top = 475;
       if (!window.dancers[i]["$node"][0].className) {
         top+=50;
-        console.log('found');
+        // console.log('found');
       }
       makeDancer.prototype.setPosition.call(window.dancers[i]["$node"], top, left);
       left+=200;
