@@ -12,14 +12,48 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeDancer.prototype.step = function(dancer) {
-  console.log(dancer);
-  this.y = ($('body').height()) / 2 * Math.random() + 100;
-  this.x = $('.container').width() * Math.random();
   var stepStyleOff = {
     top: this.y,
     left: this.x
   };
-  dancer.$node.animate(stepStyleOff, 1500, function() {
+  var newx = ($('body').height()) / 2 * Math.random() + 100;
+  var newy = $('.container').width() * Math.random();
+  // var neary = (this.y > newy - 300 && this.y < newy + 300);
+  // var nearx = (this.x > nearx -300 && this.x < nearx + 300);
+
+  // if (neary && nearx) {
+  //   var stepStyleOff = {
+  //     top: newy,
+  //     left: newx
+  //   };
+  // }
+
+  var stepStyleOff = {
+      top: newy,
+      left: newx
+  };
+  console.log(newy, newx);
+  // var collisions = false
+  // for (var i = 0; i < window.dancers.length; i++) {
+  //   if (!(collisions)) {
+  //     var othery = window.dancers[i].y;
+  //     var otherx = window.dancers[i].x;
+  //     var collisiony = (this.y > othery - 100 && this.y < othery + 100);
+  //     var collisionx = (this.x > otherx -100 && this.x < otherx + 100);
+  //     if (collisionx && collisiony) {
+  //       collisions = true;
+  //     }
+  //   }
+  // }
+
+  // if (collisions) {
+  //   dancer.$node.animate(stepStyleOff, 5000, function() {
+  //     console.log('will spin');
+  //     makeDancer.prototype.step(dancer);
+  //   });
+  // }
+
+  dancer.$node.animate(stepStyleOff, 5000, function() {
     makeDancer.prototype.step(dancer);
   });
   // console.log('stepping to y= ' + y + ' x= ' + x + ' inteval = ' + interval);
