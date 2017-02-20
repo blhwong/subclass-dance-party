@@ -2,17 +2,33 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
   // use jQuery to create an HTML <span> tag
   // this.$node = $('<span class="dancer"></span>');
-  makeDancer.prototype.step.call(this);
-  makeDancer.prototype.setPosition.call(this.$node, top, left);
+  this.y = top;
+  this.x = left;
+  // console.log(this.y);
+  // console.log(this.x);
+  makeDancer.prototype.setPosition.call(this.$node, this.y, this.x);
+ 
 
 };
 
 makeDancer.prototype.step = function() {
-  setTimeout(this.step.bind(this), this.timeBetweenSteps);
+  var top = ($("body").height())/2 * Math.random() + 100;
+  var left =  $(".container").width() * Math.random();
+  // var stepStyleOn = {
+  //   top: '+=10px',
+  //   left: '+=10px'
+  // }
+  var stepStyleOff = {
+    top: top,
+    left: left
+  }
+  $('.travolta').animate(stepStyleOff, 1000,makeDancer.prototype.step);
+  // console.log('stepping to y= ' + y + ' x= ' + x + ' inteval = ' + interval);
+  // makeDancer.prototype.setPosition.call(this.$node, y, x);
+  // setTimeout(makeDancer.prototype.step.bind(this, y, x, interval), interval);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
-  console.log(top, left);
   var styleSettings = {
     top: top,
     left: left

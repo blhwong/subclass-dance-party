@@ -8,8 +8,9 @@ var makeTravolta = function(top, left, timeBetweenSteps) {
 
 makeTravolta.prototype = Object.create(makeDancer.prototype);
 makeTravolta.prototype.constructor = makeTravolta;
-makeTravolta.prototype.step = function() {
-  makeDancer.prototype.step.call(this);
-  // this.$node.toggle();
-};
+// makeTravolta.prototype.step = function() {
+//   makeDancer.prototype.step.call(this);
+//   console.log('calling maketravolta step')
+//   // this.$node.toggle();
+// };
 // makeTravolta.prototype.strafe = makeDancer.prototype.strafe.bind(this);

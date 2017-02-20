@@ -34,7 +34,7 @@ body, a:link, a:visited, a:active{
   position:absolute;
   animation-name: example;
   animation-duration: 2s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 0;
   
   /*animation-direction: alternate;*/
 }
@@ -46,7 +46,7 @@ img{
   position:absolute;
   animation-name: example;
   animation-duration: 2s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 0;
   /*animation-direction: alternate;*/
 
 }
@@ -74,4 +74,6 @@ img{
 .container {
   height: 1000px;
   padding: 200px;
+}
+button, #roam {
 }

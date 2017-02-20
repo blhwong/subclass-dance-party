@@ -28,7 +28,7 @@ $(document).ready(function() {
       // $(".container").height() * Math.random(),
       ($("body").height())/2 * Math.random() + 100,
       $(".container").width() * Math.random(),
-      Math.random() * 10000
+      20
     );
     $('.container').append(dancer.$node);
   });
@@ -37,6 +37,9 @@ $(document).ready(function() {
   });
   $('.spinbutton').on('click', function(event) {
     makeDancer.prototype.spin();
+  });
+  $('#roam').click( function(event) {
+     makeDancer.prototype.step();
   });
 });
 
