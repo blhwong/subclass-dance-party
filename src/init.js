@@ -32,7 +32,9 @@ $(document).ready(function() {
     );
     dancer.$node.on('mouseover', function() {
       console.log('hovering');
-    })
+    });
+    dancer.stepping = false;
+    dancer.toggleOff = false;
     window.dancers.push(dancer);
     console.log(window.dancers);
     $('.container').append(dancer.$node);
@@ -45,7 +47,14 @@ $(document).ready(function() {
   });
   $('#roam').click( function(event) {
     for (var i=0; i < window.dancers.length; i++) {
-      makeDancer.prototype.step(window.dancers[i]);
+      if (window.dancers[i].stepping === false) {
+        window.dancers[i].stepping = true;
+        window.dancers[i].toggleOff = false;
+        makeDancer.prototype.step(window.dancers[i]);
+      } else if (window.dancers[i].stepping === true) {
+        window.dancers[i].toggleOff = true;
+        window.dancers[i].stepping = false;
+      }
     }
   });
   $('.lineup').on('click', function() {

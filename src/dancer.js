@@ -12,27 +12,30 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeDancer.prototype.step = function(dancer) {
+  console.log('toggleoff state is '  + dancer.toggleOff)
   var stepStyleOff = {
-    top: this.y,
-    left: this.x
+    top: dancer.y,
+    left: dancer.x
   };
-  var newx = ($('body').height()) / 2 * Math.random() + 100;
-  var newy = $('.container').width() * Math.random();
-  // var neary = (this.y > newy - 300 && this.y < newy + 300);
-  // var nearx = (this.x > nearx -300 && this.x < nearx + 300);
-
-  // if (neary && nearx) {
-  //   var stepStyleOff = {
-  //     top: newy,
-  //     left: newx
-  //   };
-  // }
-
-  var stepStyleOff = {
+  console.log(dancer.x, dancer.y)
+  var newy = ($('body').height()) / 2 * Math.random() + 100;
+  var newx = $('.container').width() * Math.random();
+  console.log(newy, newx);
+  var neary = (dancer.y > newy - 200 && dancer.y < newy + 200);
+  var nearx = (dancer.x > newx - 200 && dancer.x < newx + 200);
+  console.log(neary, nearx)
+  if (neary && nearx) {
+  }
+    var stepStyleOff = {
       top: newy,
       left: newx
-  };
-  console.log(newy, newx);
+    };
+  if (!(dancer.toggleOff)) {
+    dancer.$node.animate(stepStyleOff, 2000, function() {
+      console.log('toggle is not off yet')
+      makeDancer.prototype.step(dancer);
+    });
+  }
   // var collisions = false
   // for (var i = 0; i < window.dancers.length; i++) {
   //   if (!(collisions)) {
@@ -52,10 +55,6 @@ makeDancer.prototype.step = function(dancer) {
   //     makeDancer.prototype.step(dancer);
   //   });
   // }
-
-  dancer.$node.animate(stepStyleOff, 5000, function() {
-    makeDancer.prototype.step(dancer);
-  });
   // console.log('stepping to y= ' + y + ' x= ' + x + ' inteval = ' + interval);
   // makeDancer.prototype.setPosition.call(this.$node, y, x);
   // setTimeout(makeDancer.prototype.step.bind(this, y, x, interval), interval);
