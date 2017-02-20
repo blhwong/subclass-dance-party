@@ -30,6 +30,7 @@ $(document).ready(function() {
       $('.container').width() * Math.random(),
       20
     );
+    dancer.spin = false;
     dancer.$node.on('mouseover', function(event) {
       console.log('hovering');
       // var styleSettings2 = {
