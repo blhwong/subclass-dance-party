@@ -8,7 +8,7 @@ var makeAstley = function(top, left, timeBetweenSteps) {
 
 makeAstley.prototype = Object.create(makeDancer.prototype);
 makeAstley.prototype.constructor = makeAstley;
-makeAstley.prototype.step = function() {
-  makeDancer.prototype.step.call(this);
-  //this.$node.toggle();
-};
+// makeAstley.prototype.step = function() {
+//   makeDancer.prototype.step.call(this);
+//   // this.$node.toggle();
+// };
