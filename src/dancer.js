@@ -14,18 +14,18 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 makeDancer.prototype.step = function(dancer) {
 
 
-  console.log('toggleoff state is '  + dancer.toggleOff)
+  // console.log('toggleoff state is '  + dancer.toggleOff)
   var stepStyleOff = {
     top: dancer.y,
     left: dancer.x
   };
-  console.log(dancer.x, dancer.y)
+  // console.log(dancer.x, dancer.y)
   var newy = ($('body').height()) / 2 * Math.random() + 100;
   var newx = $('.container').width() * Math.random();
-  console.log(newy, newx);
+  // console.log(newy, newx);
   var neary = (dancer.y > newy - 200 && dancer.y < newy + 200);
   var nearx = (dancer.x > newx - 200 && dancer.x < newx + 200);
-  console.log(neary, nearx)
+  // console.log(neary, nearx)
   if (neary && nearx) {
   }
     var stepStyleOff = {
@@ -34,7 +34,7 @@ makeDancer.prototype.step = function(dancer) {
     };
   if (!(dancer.toggleOff)) {
     dancer.$node.animate(stepStyleOff, 2000, function() {
-      console.log('toggle is not off yet')
+      // console.log('toggle is not off yet')
       makeDancer.prototype.step(dancer);
     });
   }

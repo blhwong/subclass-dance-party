@@ -93,21 +93,21 @@ $(document).ready(function() {
   window.setInterval(function() {
     // console.log('hi');
     for (var i = 0; i < window.dancers.length - 1; i++) {
-      var x = window.dancers[i].x - window.dancers[i+1].x;
+      var x = window.dancers[i]["$node"][0].x - window.dancers[i+1]["$node"][0].x;
       //console.log(x);
       x = Math.abs(x);
       // console.log('x', x);
       x = Math.pow(x, 2);
-      var y = window.dancers[i].y - window.dancers[i+1].y;
+      var y = window.dancers[i]["$node"][0].y - window.dancers[i+1]["$node"][0].y;
       y = Math.abs(y);
       // console.log('y', y);
       y = Math.pow(y, 2);
       var dist = Math.sqrt(x + y);
       console.log('dist', dist);
-      if (dist < 50) {
+      if (dist < 100) {
         console.log('interact');
       }
     }
-  }, 5000);
+  }, 2000);
 });
 
