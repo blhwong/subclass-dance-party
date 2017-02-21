@@ -12,58 +12,95 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeDancer.prototype.step = function(dancer) {
-  console.log('toggleoff state is ' + dancer.toggleOff);
+
+
+  console.log('toggleoff state is '  + dancer.toggleOff)
   var stepStyleOff = {
     top: dancer.y,
     left: dancer.x
   };
-  // console.log(dancer.x, dancer.y);
+  console.log(dancer.x, dancer.y)
   var newy = ($('body').height()) / 2 * Math.random() + 100;
   var newx = $('.container').width() * Math.random();
-  // console.log(newy, newx);
-  var neary = (dancer.y > newy - 140 && dancer.y < newy + 140);
-  var nearx = (dancer.x > newx - 140 && dancer.x < newx + 140);
-  // console.log(neary, nearx);
-
-  var collisions = false;
-  for (var i = 0; i < window.dancers.length; i++) {
-    if (!(collisions)) {
-      var othery = window.dancers[i].y;
-      var otherx = window.dancers[i].x;
-      var collisiony = (dancer.y > othery - 100 && dancer.y < othery + 100);
-      var collisionx = (dancer.x > otherx -100 && dancer.x < otherx + 100);
-      console.log(dancer.y - othery, dancer.x - otherx)
-      if (collisionx && collisiony) {
-        collisions = true;
-      }
-    }
+  console.log(newy, newx);
+  var neary = (dancer.y > newy - 200 && dancer.y < newy + 200);
+  var nearx = (dancer.x > newx - 200 && dancer.x < newx + 200);
+  console.log(neary, nearx)
+  if (neary && nearx) {
   }
-  if (collisions) {
-    console.log("COLLISION");
-    makeDancer.prototype.dancerspin(dancer);
-  }
+    var stepStyleOff = {
+      top: newy,
+      left: newx
+    };
   if (!(dancer.toggleOff)) {
-    if (neary && nearx) {
-      var stepStyleOff = {
-        top: newy,
-        left: newx
-      };
-    }
-    dancer.$node.animate(stepStyleOff, 3000, function() {
-      console.log('toggle is not off yet');
+    dancer.$node.animate(stepStyleOff, 2000, function() {
+      console.log('toggle is not off yet')
       makeDancer.prototype.step(dancer);
     });
   }
 
-  // if (collisions) {
-  //   dancer.$node.animate(stepStyleOff, 5000, function() {
-  //     console.log('will spin');
+
+
+
+
+
+
+
+
+  // console.log('toggleoff state is ' + dancer.toggleOff);
+  // var stepStyleOff = {
+  //   // top: dancer.y,
+  //   // left: dancer.x
+  //   top: this.y,
+  //   left: this.x
+  // };
+  // // console.log(dancer.x, dancer.y);
+  // var newy = ($('body').height()) / 2 * Math.random() + 100;
+  // var newx = $('.container').width() * Math.random();
+  // // console.log(newy, newx);
+  // // var neary = (dancer.y > newy - 140 && dancer.y < newy + 140);
+  // // var nearx = (dancer.x > newx - 140 && dancer.x < newx + 140);
+  // // console.log(neary, nearx);
+
+  // // var collisions = false;
+  // // for (var i = 0; i < window.dancers.length; i++) {
+  // //   if (!(collisions)) {
+  // //     var othery = window.dancers[i].y;
+  // //     var otherx = window.dancers[i].x;
+  // //     var collisiony = (dancer.y > othery - 100 && dancer.y < othery + 100);
+  // //     var collisionx = (dancer.x > otherx -100 && dancer.x < otherx + 100);
+  // //     console.log(dancer.y - othery, dancer.x - otherx)
+  // //     if (collisionx && collisiony) {
+  // //       collisions = true;
+  // //     }
+  // //   }
+  // // }
+  // // if (collisions) {
+  // //   console.log("COLLISION");
+  // //   makeDancer.prototype.dancerspin(dancer);
+  // // }
+  // if ((dancer.toggleOff)) {
+  //   // if (neary && nearx) {
+  //   //   var stepStyleOff = {
+  //   //     top: newy,
+  //   //     left: newx
+  //   //   };
+  //   // }
+  //   dancer.$node.animate(stepStyleOff, 2000, function() {
+  //     console.log('toggle is not off yet');
   //     makeDancer.prototype.step(dancer);
   //   });
   // }
-  // console.log('stepping to y= ' + y + ' x= ' + x + ' inteval = ' + interval);
-  // makeDancer.prototype.setPosition.call(this.$node, y, x);
-  // setTimeout(makeDancer.prototype.step.bind(this, y, x, interval), interval);
+
+  // // if (collisions) {
+  // //   dancer.$node.animate(stepStyleOff, 5000, function() {
+  // //     console.log('will spin');
+  // //     makeDancer.prototype.step(dancer);
+  // //   });
+  // // }
+  // // console.log('stepping to y= ' + y + ' x= ' + x + ' inteval = ' + interval);
+  // // makeDancer.prototype.setPosition.call(this.$node, y, x);
+  // // setTimeout(makeDancer.prototype.step.bind(this, y, x, interval), interval);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
