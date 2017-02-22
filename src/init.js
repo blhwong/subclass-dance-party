@@ -106,6 +106,10 @@ $(document).ready(function() {
       console.log('dist', dist);
       if (dist < 100) {
         console.log('interact');
+        makeDancer.prototype.spin();
+        window.setTimeout(function() {
+          makeDancer.prototype.spin();
+        }, 500);
       }
     }
   }, 2000);
